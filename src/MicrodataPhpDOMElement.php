@@ -1,6 +1,6 @@
 <?php
 
-namespace linclark\MicrodataPHP;
+namespace Zoon\ZMicrodataPHP;
 
 /**
  * Extend the DOMElement class with the Microdata API functions.
@@ -148,7 +148,11 @@ class MicrodataPhpDOMElement extends \DOMElement {
         if ($this->getAttribute('content')) {
           return $this->getAttribute('content');
         } else {
-          return $this->textContent;
+          $text = '';
+          foreach ($this->childNodes as $node) {
+		  	$text .= $node->textContent . ' ';
+		  }
+          return trim($text);
         }
     }
   }

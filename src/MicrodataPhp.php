@@ -10,7 +10,7 @@
  * Copyright (c) 2009-2011 Philip Jägenstedt
  */
 
-namespace linclark\MicrodataPHP;
+namespace Zoon\ZMicrodataPHP;
 
 /**
  * Extracts microdata from HTML.
@@ -40,8 +40,8 @@ class MicrodataPhp {
     }
 
     $dom = new MicrodataPhpDOMDocument();
-    $dom->registerNodeClass('DOMDocument', 'linclark\MicrodataPHP\MicrodataPhpDOMDocument');
-    $dom->registerNodeClass('DOMElement', 'linclark\MicrodataPHP\MicrodataPhpDOMElement');
+    $dom->registerNodeClass('DOMDocument', MicrodataPhpDOMDocument::class);
+    $dom->registerNodeClass('DOMElement', MicrodataPhpDOMElement::class);
     $dom->preserveWhiteSpace = false;
 
     // Prepare the DOM using either the URL or HTML string.
